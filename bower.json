@@ -1,0 +1,25 @@
+{
+  "name": "gpxdraw",
+  "version": "0.1.0",
+  "homepage": "https://github.com/ricardoaandres/gpxdraw",
+  "authors": [
+    "Ricardo Andrés Bello <ricardoaandres@me.com>"
+  ],
+  "description": "Import a .gpx file to google maps and draw your route with options",
+  "main": "src/gpxdraw.js",
+  "keywords": [
+    "gpx",
+    "google",
+    "maps",
+    "map",
+    "gps"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
