@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <title>GPXDraw</title>
+
+    <style>
+      #map {
+        height: 600px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id='map'></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGNdf8qiYpQ0_a_kv8d96T5kS_VYxrV9c"></script>
+    <script src='../src/gpxdraw.js'></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+      });
+    </script>
+  </body>
+</html>
