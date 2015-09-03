@@ -51,13 +51,21 @@
 
   GPXDraw.prototype.preparePolyline = function () {
     var points = [],
-        bounds = new google.maps.LatLngBounds();
+        bounds = new google.maps.LatLngBounds(),
+        trackCoordinates = Array.prototype.slice.call(this.gpx.querySelectorAll('trkpt'));
 
     if (!this.gpx) {
       throw new Error('GPXDraw: Missing gpx file');
     }
 
-    Array.prototype.forEach.call(this.gpx.querySelectorAll('trkpt'), function (position) {
+    trackCoordinates.sort(function (a, b) {
+      a = new Date(a.querySelector('time').innerHTML);
+      b = new Date(b.querySelector('time').innerHTML);
+
+      return a > b ? -1 : a < b ? 1 : 0;
+    });
+
+    trackCoordinates.forEach(function (position) {
       var latitude = position.getAttribute('lat'),
           longitude = position.getAttribute('lon'),
           point = new google.maps.LatLng(latitude, longitude);
