@@ -27,6 +27,10 @@
 
     polyline.setMap(this.options.map);
     this.options.map.fitBounds(this.bounds);
+
+    if (this.options.zoom) {
+      this.options.map.setZoom(this.options.zoom);
+    }
   };
 
   GPXDraw.prototype.loadFile = function () {
